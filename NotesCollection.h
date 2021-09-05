@@ -6,11 +6,13 @@
 #define LABORATORIODIPROGRAMMAZIONEES13_NOTESCOLLECTION_H
 #include "Note.h"
 #include <list>
+#include "Subject.h"
 
-class NotesCollection {
+class NotesCollection : public Subject{
 private:
     std::string name;
     std::list<Note*> notes;
+    std::list<Observer*> observers;
 public:
     NotesCollection(std::string n);
     const std::string &getName() const;
@@ -19,9 +21,13 @@ public:
 
     const std::list<Note*> &getNotes() const;
 
-    void setNotes(const std::list<Note> &notes);
-
     int getListSize();
+
+    void addObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
+
+    void notifyObservers() override;
 };
 
 

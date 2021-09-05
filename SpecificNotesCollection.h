@@ -6,15 +6,21 @@
 #define LABORATORIODIPROGRAMMAZIONEES13_SPECIFICNOTESCOLLECTION_H
 #include "Note.h"
 #include <list>
-class SpecificNotesCollection {
+#include "Subject.h"
+class SpecificNotesCollection : public Subject {
 private:
     std::list<Note*> notes;
+    std::list<Observer*> observers;
 public:
     const std::list<Note *> &getNotes() const;
 
-    void setNotes(const std::list<Note *> &notes);
-
     int getListSize();
+
+    void addObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
+
+    void notifyObservers() override;
 };
 
 

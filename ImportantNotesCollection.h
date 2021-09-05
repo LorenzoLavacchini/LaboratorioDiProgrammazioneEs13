@@ -6,14 +6,21 @@
 #define LABORATORIODIPROGRAMMAZIONEES13_IMPORTANTNOTESCOLLECTION_H
 #include"Note.h"
 #include <list>
+#include "Subject.h"
 
-class ImportantNotesCollection {
+class ImportantNotesCollection : public Subject{
 private:
     std::list<Note*> notes;
+    std::list<Observer*> observers;
 public:
     const std::list<Note *> &getNotes() const;
-    void setNotes(const std::list<Note *> &notes);
     int getListSize();
+
+    void addObserver(Observer *o) override;
+
+    void removeObserver(Observer *o) override;
+
+    void notifyObservers() override;
 };
 
 

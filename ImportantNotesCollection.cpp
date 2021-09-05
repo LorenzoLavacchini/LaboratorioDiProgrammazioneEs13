@@ -8,10 +8,21 @@ const std::list<Note *> &ImportantNotesCollection::getNotes() const {
     return notes;
 }
 
-void ImportantNotesCollection::setNotes(const std::list<Note *> &notes) {
-    ImportantNotesCollection::notes = notes;
-}
 
 int ImportantNotesCollection::getListSize() {
     return notes.size();
+}
+
+void ImportantNotesCollection::addObserver(Observer *o) {
+    observers.push_back(o);
+}
+
+void ImportantNotesCollection::removeObserver(Observer *o) {
+    observers.remove(o);
+}
+
+void ImportantNotesCollection::notifyObservers() {
+    for(auto o:observers){
+        o->update();
+    }
 }

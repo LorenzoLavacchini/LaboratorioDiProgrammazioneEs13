@@ -16,12 +16,23 @@ const std::list<Note*> &NotesCollection::getNotes() const {
     return notes;
 }
 
-void NotesCollection::setNotes(const std::list<Note> &notes) {
-    NotesCollection::notes = notes;
-}
 
 NotesCollection::NotesCollection(std::string n) : name(n){}
 
 int NotesCollection::getListSize() {
    return notes.size();
+}
+
+void NotesCollection::addObserver(Observer *o) {
+    observers.push_back(o);
+}
+
+void NotesCollection::removeObserver(Observer *o) {
+    observers.remove(o);
+}
+
+void NotesCollection::notifyObservers() {
+    for(auto o:observers){
+        o->update();
+    }
 }
