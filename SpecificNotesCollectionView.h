@@ -11,7 +11,7 @@ class SpecificNotesCollectionView : public Observer{
 private:
     SpecificNotesCollection* specificNotesCollection;
 public:
-    SpecificNotesCollectionView(SpecificNotesCollection* s);
+    explicit SpecificNotesCollectionView(SpecificNotesCollection* s);
     void update() override;
 };
 

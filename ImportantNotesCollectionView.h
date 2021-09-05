@@ -11,7 +11,7 @@ class ImportantNotesCollectionView : public Observer{
 private:
     ImportantNotesCollection* importantNotesCollection;
 public:
-    ImportantNotesCollectionView(ImportantNotesCollection* s);
+    explicit ImportantNotesCollectionView(ImportantNotesCollection* s);
     void update() override;
 };
 

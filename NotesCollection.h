@@ -14,7 +14,7 @@ private:
     std::list<Note*> notes;
     std::list<Observer*> observers;
 public:
-    NotesCollection(std::string n);
+    explicit NotesCollection(std::string n);
     const std::string &getName() const;
 
     void setName(const std::string &name);
