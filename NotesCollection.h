@@ -10,7 +10,7 @@
 class NotesCollection {
 private:
     std::string name;
-    std::list<Note> notes;
+    std::list<Note*> notes;
 public:
     NotesCollection(std::string n);
     const std::string &getName() const;
