@@ -28,6 +28,7 @@ public:
     void removeObserver(Observer *o) override;
 
     void notifyObservers() override;
+    virtual ~NotesCollection(){}
 };
 
 
