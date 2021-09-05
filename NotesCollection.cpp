@@ -36,3 +36,11 @@ void NotesCollection::notifyObservers() {
         o->update();
     }
 }
+
+void NotesCollection::addNote(Note *n) {
+    notes.push_back(n);
+}
+
+void NotesCollection::removeNote(Note *n) {
+    notes.remove(n);
+}

@@ -26,3 +26,11 @@ void ImportantNotesCollection::notifyObservers() {
         o->update();
     }
 }
+
+void ImportantNotesCollection::addNote(Note *n) {
+    notes.push_back(n);
+}
+
+void ImportantNotesCollection::removeNote(Note *n) {
+    notes.remove(n);
+}

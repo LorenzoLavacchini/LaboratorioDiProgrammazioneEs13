@@ -23,6 +23,10 @@ public:
     void notifyObservers() override;
 
     virtual ~ImportantNotesCollection(){}
+
+    void addNote(Note* n);
+
+    void removeNote(Note* n);
 };
 
 
