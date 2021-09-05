@@ -6,8 +6,14 @@
 
 
 int main() {
-    NotesCollection nC("Università");
-    ImportantNotesCollection iNC;
-    SpecificNotesCollection sNC;
+    NotesCollection notesCollection("Università");
+    ImportantNotesCollection importantNotesCollection;
+    SpecificNotesCollection specificNotesCollection;
+
+    Note primaNota("prima nota","appunti di informatica",false);
+    Note secondaNota("seconda nota","appunti di matematica",false);
+
+
+
     return 0;
 }
