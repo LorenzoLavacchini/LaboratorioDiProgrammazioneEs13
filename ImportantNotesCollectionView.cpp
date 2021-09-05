@@ -8,5 +8,12 @@ void ImportantNotesCollectionView::update() {
     std::cout<<"Numero di note nella lista importantNotesCollection:"<<importantNotesCollection->getListSize()<<std::endl;
 }
 
-ImportantNotesCollectionView::ImportantNotesCollectionView(ImportantNotesCollection *s) : importantNotesCollection(s) {}
+ImportantNotesCollectionView::ImportantNotesCollectionView(ImportantNotesCollection *s) : importantNotesCollection(s) {
+    importantNotesCollection->addObserver(this);
+}
+
+ImportantNotesCollectionView::~ImportantNotesCollectionView() {
+    importantNotesCollection->removeObserver(this);
+}
+
 

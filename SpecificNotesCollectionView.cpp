@@ -8,4 +8,10 @@ void SpecificNotesCollectionView::update() {
     std::cout<<"Numero di note nella lista specificNotesCollection:"<<specificNotesCollection->getListSize()<<std::endl;
 }
 
-SpecificNotesCollectionView::SpecificNotesCollectionView(SpecificNotesCollection *s):specificNotesCollection(s){}
+SpecificNotesCollectionView::SpecificNotesCollectionView(SpecificNotesCollection *s):specificNotesCollection(s){
+    specificNotesCollection->addObserver(this);
+}
+
+SpecificNotesCollectionView::~SpecificNotesCollectionView() {
+    specificNotesCollection->removeObserver(this);
+}

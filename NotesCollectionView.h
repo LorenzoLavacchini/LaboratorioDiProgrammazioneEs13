@@ -14,7 +14,7 @@ public:
 public:
     explicit NotesCollectionView(NotesCollection* s);
     void update() override;
-    virtual ~NotesCollectionView(){}
+    virtual ~NotesCollectionView();
 };
 
 

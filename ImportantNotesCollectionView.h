@@ -13,7 +13,7 @@ private:
 public:
     explicit ImportantNotesCollectionView(ImportantNotesCollection* s);
     void update() override;
-    virtual ~ImportantNotesCollectionView(){}
+    virtual ~ImportantNotesCollectionView();
 };
 
 

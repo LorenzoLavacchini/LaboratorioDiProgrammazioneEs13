@@ -9,4 +9,10 @@ void NotesCollectionView::update() {
     std::cout<<"Numero di note nella lista "<<notesCollection->getName()<<": "<<notesCollection->getListSize()<<std::endl;
 }
 
-NotesCollectionView::NotesCollectionView(NotesCollection *s) : notesCollection(s){}
+NotesCollectionView::NotesCollectionView(NotesCollection *s) : notesCollection(s){
+    notesCollection->addObserver(this);
+}
+
+NotesCollectionView::~NotesCollectionView() {
+    notesCollection->removeObserver(this);
+}
