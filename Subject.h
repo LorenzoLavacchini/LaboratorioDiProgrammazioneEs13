@@ -4,7 +4,7 @@
 
 #ifndef LABORATORIODIPROGRAMMAZIONEES13_SUBJECT_H
 #define LABORATORIODIPROGRAMMAZIONEES13_SUBJECT_H
-
+#include "Observer.h"
 
 class Subject {
 public:

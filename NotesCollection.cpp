@@ -21,3 +21,7 @@ void NotesCollection::setNotes(const std::list<Note> &notes) {
 }
 
 NotesCollection::NotesCollection(std::string n) : name(n){}
+
+int NotesCollection::getNumListSize() {
+   return notes.size();
+}
