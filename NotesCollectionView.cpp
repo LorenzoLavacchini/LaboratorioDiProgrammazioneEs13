@@ -6,5 +6,5 @@
 
 
 void NotesCollectionView::update() {
-    std::cout<<"Numero di note nella lista "<<notesCollection->getName()<<": "<<notesCollection->getNumListSize()<<std::endl;
+    std::cout<<"Numero di note nella lista "<<notesCollection->getName()<<": "<<notesCollection->getListSize()<<std::endl;
 }

@@ -12,7 +12,7 @@ void NotesCollection::setName(const std::string &name) {
     NotesCollection::name = name;
 }
 
-const std::list<Note> &NotesCollection::getNotes() const {
+const std::list<Note*> &NotesCollection::getNotes() const {
     return notes;
 }
 
@@ -22,6 +22,6 @@ void NotesCollection::setNotes(const std::list<Note> &notes) {
 
 NotesCollection::NotesCollection(std::string n) : name(n){}
 
-int NotesCollection::getNumListSize() {
+int NotesCollection::getListSize() {
    return notes.size();
 }
