@@ -7,14 +7,11 @@
 #include "Note.h"
 #include <list>
 #include "Subject.h"
-class SpecificNotesCollection : public Subject {
+#include "Collection.h"
+class SpecificNotesCollection : public Subject, public Collection {
 private:
-    std::list<Note*> notes;
     std::list<Observer*> observers;
 public:
-    const std::list<Note *> &getNotes() const;
-
-    int getListSize();
 
     void addObserver(Observer *o) override;
 
@@ -24,8 +21,6 @@ public:
 
     virtual ~SpecificNotesCollection(){}
 
-    void addNote(Note* n);
-    void removeNote(Note* n);
 };
 
 

@@ -4,14 +4,6 @@
 
 #include "ImportantNotesCollection.h"
 
-const std::list<Note *> &ImportantNotesCollection::getNotes() const {
-    return notes;
-}
-
-
-int ImportantNotesCollection::getListSize() {
-    return notes.size();
-}
 
 void ImportantNotesCollection::addObserver(Observer *o) {
     observers.push_back(o);
@@ -27,10 +19,4 @@ void ImportantNotesCollection::notifyObservers() {
     }
 }
 
-void ImportantNotesCollection::addNote(Note *n) {
-    notes.push_back(n);
-}
 
-void ImportantNotesCollection::removeNote(Note *n) {
-    notes.remove(n);
-}
