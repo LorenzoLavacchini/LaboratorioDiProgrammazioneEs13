@@ -27,3 +27,5 @@ bool Note::isBlocked() const {
 void Note::setBlocked(bool blocked) {
     Note::blocked = blocked;
 }
+
+Note::Note(std::string ti, std::string te, bool b) : title(ti),text(te),blocked(b){}

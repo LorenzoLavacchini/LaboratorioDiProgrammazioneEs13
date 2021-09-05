@@ -12,6 +12,7 @@ private:
     std::string text;
     bool blocked;
 public:
+    Note(std::string ti, std::string te,bool b);
     const std::string &getTitle() const;
     void setTitle(const std::string &title);
     const std::string &getText() const;
