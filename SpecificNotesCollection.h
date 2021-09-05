@@ -13,6 +13,8 @@ public:
     const std::list<Note *> &getNotes() const;
 
     void setNotes(const std::list<Note *> &notes);
+
+    int getListSize();
 };
 
 

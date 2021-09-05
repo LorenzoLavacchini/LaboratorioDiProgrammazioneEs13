@@ -7,3 +7,6 @@
 void ImportantNotesCollectionView::update() {
     std::cout<<"Numero di note nella lista importantNotesCollection:"<<importantNotesCollection->getListSize()<<std::endl;
 }
+
+ImportantNotesCollectionView::ImportantNotesCollectionView(ImportantNotesCollection *s) : importantNotesCollection(s) {}
+

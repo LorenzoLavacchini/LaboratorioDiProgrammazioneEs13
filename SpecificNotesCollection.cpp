@@ -11,3 +11,7 @@ const std::list<Note *> &SpecificNotesCollection::getNotes() const {
 void SpecificNotesCollection::setNotes(const std::list<Note *> &notes) {
     SpecificNotesCollection::notes = notes;
 }
+
+int SpecificNotesCollection::getListSize() {
+    return notes.size();
+}

@@ -12,6 +12,7 @@ class NotesCollectionView : public Observer{
 public:
     NotesCollection* notesCollection;
 public:
+    NotesCollectionView(NotesCollection* s);
     void update() override;
 };
 
