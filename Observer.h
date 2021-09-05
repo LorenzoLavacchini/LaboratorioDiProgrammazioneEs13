@@ -1,5 +1,5 @@
 //
-// Created by laura on 05/09/2021.
+// Created by lorenzo on 05/09/2021.
 //
 
 #ifndef LABORATORIODIPROGRAMMAZIONEES13_OBSERVER_H
