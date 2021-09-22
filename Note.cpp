@@ -13,7 +13,7 @@ void Note::setTitle(const std::string &title) {
         Note::title = title;
     }
     else{
-        std::cerr<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
+        std::cout<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
     }
 }
 
@@ -26,7 +26,7 @@ void Note::setText(const std::string &text) {
         Note::text = text;
     }
     else{
-        std::cerr<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
+        std::cout<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
     }
 }
 

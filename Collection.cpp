@@ -13,7 +13,12 @@ void Collection::addNote(Note *n) {
 }
 
 void Collection::removeNote(Note *n) {
-    notes.remove(n);
+    if(n->isBlocked()==false){
+        notes.remove(n);
+    }
+    else{
+        std::cout<<"Impossibile cancellare la nota. E' necessario sbloccarla"<<std::endl;
+    }
 }
 
 void Collection::printAllNotes() {

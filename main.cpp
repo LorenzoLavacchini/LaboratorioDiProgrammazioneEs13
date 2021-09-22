@@ -16,7 +16,9 @@ int main() {
     notesCollection.addNote(&secondaNota);
     primaNota.setTitle("nuovo titolo");
     notesCollection.printAllNotes();
-
+    notesCollection.removeNote(&primaNota);
+    notesCollection.removeNote(&secondaNota);
+    notesCollection.printAllNotes();
 
 
     return 0;
