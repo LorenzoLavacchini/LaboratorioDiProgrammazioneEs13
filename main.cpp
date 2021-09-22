@@ -4,14 +4,21 @@
 #include "ImportantNotesCollection.h"
 #include "SpecificNotesCollection.h"
 #include "NotesCollectionView.h"
+#include "ImportantNotesCollectionView.h"
+#include "SpecificNotesCollectionView.h"
 
 
 int main() {
+
     NotesCollection notesCollection("Università");
     ImportantNotesCollection importantNotesCollection;
     SpecificNotesCollection specificNotesCollection;
 
+    //Pattern è in versione pull
     NotesCollectionView notesCollectionView(&notesCollection);
+    ImportantNotesCollectionView importantNotesCollectionView(&importantNotesCollection);
+    SpecificNotesCollectionView specificNotesCollectionView(&specificNotesCollection);
+
 
     Note primaNota("prima nota","appunti di informatica",true);
     Note secondaNota("seconda nota","appunti di matematica",false);
