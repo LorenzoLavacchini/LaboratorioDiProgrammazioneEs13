@@ -11,8 +11,8 @@ protected:
     std::list<Note*> notes;
 public:
     int getListSize();
-    void addNote(Note* n);
-    void removeNote(Note* n);
+    virtual void addNote(Note* n);
+    virtual void removeNote(Note* n);
     void printAllNotes();
 };
 

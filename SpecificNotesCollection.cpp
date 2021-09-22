@@ -18,3 +18,13 @@ void SpecificNotesCollection::notifyObservers() {
     }
 }
 
+void SpecificNotesCollection::addNote(Note *n) {
+    Collection::addNote(n);
+    notifyObservers();
+}
+
+void SpecificNotesCollection::removeNote(Note *n) {
+    Collection::removeNote(n);
+    notifyObservers();
+}
+

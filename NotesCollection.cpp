@@ -29,3 +29,13 @@ void NotesCollection::notifyObservers() {
     }
 }
 
+void NotesCollection::addNote(Note *n) {
+    Collection::addNote(n);
+    notifyObservers();
+}
+
+void NotesCollection::removeNote(Note *n) {
+    Collection::removeNote(n);
+    notifyObservers();
+}
+

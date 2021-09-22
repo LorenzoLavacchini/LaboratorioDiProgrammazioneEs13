@@ -26,6 +26,10 @@ public:
     void notifyObservers() override;
 
     virtual ~NotesCollection(){}
+
+    void addNote(Note *n) override;
+
+    void removeNote(Note *n) override;
 };
 
 

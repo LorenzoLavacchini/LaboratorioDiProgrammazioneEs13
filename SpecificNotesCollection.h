@@ -21,6 +21,9 @@ public:
 
     virtual ~SpecificNotesCollection(){}
 
+    void addNote(Note *n) override;
+
+    void removeNote(Note *n) override;
 };
 
 

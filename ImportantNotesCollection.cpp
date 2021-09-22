@@ -19,4 +19,14 @@ void ImportantNotesCollection::notifyObservers() {
     }
 }
 
+void ImportantNotesCollection::addNote(Note *n) {
+    Collection::addNote(n);
+    notifyObservers();
+}
+
+void ImportantNotesCollection::removeNote(Note *n) {
+    Collection::removeNote(n);
+    notifyObservers();
+}
+
 
