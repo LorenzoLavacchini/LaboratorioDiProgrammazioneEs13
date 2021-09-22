@@ -9,7 +9,12 @@ const std::string &Note::getTitle() const {
 }
 
 void Note::setTitle(const std::string &title) {
-    Note::title = title;
+    if(blocked == false) {
+        Note::title = title;
+    }
+    else{
+        std::cerr<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
+    }
 }
 
 const std::string &Note::getText() const {
@@ -17,7 +22,12 @@ const std::string &Note::getText() const {
 }
 
 void Note::setText(const std::string &text) {
-    Note::text = text;
+    if(blocked == false) {
+        Note::text = text;
+    }
+    else{
+        std::cerr<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
+    }
 }
 
 bool Note::isBlocked() const {
