@@ -12,8 +12,8 @@ protected:
 public:
     int getListSize();
     void addNote(Note* n);
-
     void removeNote(Note* n);
+    void printAllNotes();
 };
 
 

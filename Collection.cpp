@@ -15,3 +15,9 @@ void Collection::addNote(Note *n) {
 void Collection::removeNote(Note *n) {
     notes.remove(n);
 }
+
+void Collection::printAllNotes() {
+    for(auto n:notes){
+        n->printInformations();
+    }
+}

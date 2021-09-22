@@ -29,3 +29,13 @@ void Note::setBlocked(bool blocked) {
 }
 
 Note::Note(std::string ti, std::string te, bool b) : title(ti),text(te),blocked(b){}
+
+void Note::printInformations() {
+    std::cout<<"Titolo: "<<title<<std::endl;
+    if(blocked==true)
+        std::cout<<"Bloccata: vero"<<std::endl;
+    else
+        std::cout<<"Bloccata: falso"<<std::endl;
+    std::cout<<"Testo: "<<text<<std::endl;
+}
+

@@ -12,7 +12,9 @@ int main() {
 
     Note primaNota("prima nota","appunti di informatica",false);
     Note secondaNota("seconda nota","appunti di matematica",false);
-
+    notesCollection.addNote(&primaNota);
+    notesCollection.addNote(&secondaNota);
+    notesCollection.printAllNotes();
 
 
     return 0;
