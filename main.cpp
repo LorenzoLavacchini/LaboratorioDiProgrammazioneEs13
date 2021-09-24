@@ -10,7 +10,7 @@
 
 int main() {
 
-    NotesCollection notesCollection("Università");
+    NotesCollection notesCollection("Appunti da finire");
     ImportantNotesCollection importantNotesCollection;
     SpecificNotesCollection specificNotesCollection;
 
@@ -27,6 +27,12 @@ int main() {
     notesCollection.addNote(&primaNota);
     notesCollection.addNote(&secondaNota);
 
+    importantNotesCollection.addNote(&primaNota);
+    importantNotesCollection.addNote(&secondaNota);
+
+    specificNotesCollection.addNote(&primaNota);
+    specificNotesCollection.addNote(&secondaNota);
+
     //Modifica del titolo sulla base dell'attrobuto blocked
     primaNota.setTitle("nuovo titolo");
 
@@ -36,8 +42,7 @@ int main() {
     notesCollection.removeNote(&secondaNota);
     notesCollection.printAllNotes();
 
-    importantNotesCollection.addNote(&primaNota);
-    importantNotesCollection.addNote(&secondaNota);
+
 
 
     return 0;

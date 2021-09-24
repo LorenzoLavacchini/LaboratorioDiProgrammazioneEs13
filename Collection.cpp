@@ -25,4 +25,5 @@ void Collection::printAllNotes() {
     for(auto n:notes){
         n->printInformations();
     }
+    std::cout<<"----------------"<<std::endl;
 }
