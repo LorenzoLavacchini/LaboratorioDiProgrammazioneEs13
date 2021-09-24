@@ -42,8 +42,5 @@ int main() {
     notesCollection.removeNote(&secondaNota);
     notesCollection.printAllNotes();
 
-
-
-
     return 0;
 }
