@@ -6,11 +6,13 @@
 #include "NotesCollectionView.h"
 #include "ImportantNotesCollectionView.h"
 #include "SpecificNotesCollectionView.h"
-
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 int main() {
-
-    NotesCollection notesCollection("Appunti da finire");
+    ::testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
+    /*NotesCollection notesCollection("Appunti da finire");
     ImportantNotesCollection importantNotesCollection;
     SpecificNotesCollection specificNotesCollection;
 
@@ -42,5 +44,5 @@ int main() {
     notesCollection.removeNote(&secondaNota);
     notesCollection.printAllNotes();
 
-    return 0;
+    return 0;*/
 }
