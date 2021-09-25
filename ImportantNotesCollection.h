@@ -26,7 +26,10 @@ public:
 
     void removeNote(Note *n) override;
 
+    int getNumObservers();
 };
+
+
 
 
 #endif //LABORATORIODIPROGRAMMAZIONEES13_IMPORTANTNOTESCOLLECTION_H

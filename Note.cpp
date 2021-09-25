@@ -49,3 +49,12 @@ void Note::printInformations() {
     std::cout<<"Testo: "<<text<<std::endl;
 }
 
+bool Note::operator==(const Note &n) {
+    if(title == n.getTitle() && text == n.getText() && blocked == n.isBlocked()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+

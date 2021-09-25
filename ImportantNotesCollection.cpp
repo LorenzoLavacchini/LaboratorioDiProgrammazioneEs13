@@ -28,5 +28,11 @@ void ImportantNotesCollection::removeNote(Note *n) {
     Collection::removeNote(n);
     notifyObservers();
 }
-
+int ImportantNotesCollection::getNumObservers(){
+    int i = 0;
+    for(auto o:observers){
+        i++;
+    }
+    return i;
+}
 
