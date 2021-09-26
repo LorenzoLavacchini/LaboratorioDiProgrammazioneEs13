@@ -7,18 +7,15 @@
 #include "../ImportantNotesCollectionView.h"
 #include "../Note.h"
 
-class FixtureImportantNotesCollection:public ::testing::Test{
-public:
+TEST(ImportantNotesCollection, addNote){
     ImportantNotesCollection importantNotesCollection;
-};
-
-TEST_F(FixtureImportantNotesCollection, addNote){
     Note primaNota("prima nota","appunti di informatica",false);
     importantNotesCollection.addNote(&primaNota);
     ASSERT_EQ(1,importantNotesCollection.getListSize());
 }
 
-TEST_F(FixtureImportantNotesCollection, removeNote) {
+TEST(ImportantNotesCollection, removeNote) {
+    ImportantNotesCollection importantNotesCollection;
     Note primaNota("prima nota", "appunti di informatica", false);
     Note secondaNota("seconda nota", "appunti di matematica", true);
     importantNotesCollection.addNote(&primaNota);
@@ -35,18 +32,21 @@ TEST_F(FixtureImportantNotesCollection, removeNote) {
     ASSERT_EQ(1, importantNotesCollection.getListSize());
 }
 
-TEST_F(FixtureImportantNotesCollection, addObserver){
+TEST(ImportantNotesCollection, addObserver){
+    ImportantNotesCollection importantNotesCollection;
     ImportantNotesCollectionView importantNotesCollectionView(&importantNotesCollection);
     ASSERT_EQ(1,importantNotesCollection.getNumObservers());
 }
 
-TEST_F(FixtureImportantNotesCollection, removeObserver){
+TEST(ImportantNotesCollection, removeObserver){
+    ImportantNotesCollection importantNotesCollection;
     ImportantNotesCollectionView importantNotesCollectionView(&importantNotesCollection);
     importantNotesCollection.removeObserver(&importantNotesCollectionView);
     ASSERT_EQ(0,importantNotesCollection.getNumObservers());
 }
 
-TEST_F(FixtureImportantNotesCollection, notifyObservers){
+TEST(ImportantNotesCollection, notifyObservers){
+    ImportantNotesCollection importantNotesCollection;
     ImportantNotesCollectionView importantNotesCollectionView(&importantNotesCollection);
     Note primaNota("prima nota", "appunti di informatica", false);
     Note secondaNota("seconda nota", "appunti di matematica", true);

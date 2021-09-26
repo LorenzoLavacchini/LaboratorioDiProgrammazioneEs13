@@ -24,6 +24,8 @@ public:
     void addNote(Note *n) override;
 
     void removeNote(Note *n) override;
+
+    int getNumObservers();
 };
 
 

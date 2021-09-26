@@ -39,3 +39,10 @@ void NotesCollection::removeNote(Note *n) {
     notifyObservers();
 }
 
+int NotesCollection::getNumObservers(){
+    int i = 0;
+    for(auto o:observers){
+        i++;
+    }
+    return i;
+}

@@ -28,3 +28,10 @@ void SpecificNotesCollection::removeNote(Note *n) {
     notifyObservers();
 }
 
+int SpecificNotesCollection::getNumObservers(){
+    int i = 0;
+    for(auto o:observers){
+        i++;
+    }
+    return i;
+}
