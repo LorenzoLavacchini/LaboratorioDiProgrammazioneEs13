@@ -3,7 +3,6 @@
 //
 
 #include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "../ImportantNotesCollection.h"
 #include "../ImportantNotesCollectionView.h"
 #include "../Note.h"
@@ -49,8 +48,12 @@ TEST_F(FixtureImportantNotesCollection, removeObserver){
 
 TEST_F(FixtureImportantNotesCollection, notifyObservers){
     ImportantNotesCollectionView importantNotesCollectionView(&importantNotesCollection);
+    Note primaNota("prima nota", "appunti di informatica", false);
+    Note secondaNota("seconda nota", "appunti di matematica", true);
+    importantNotesCollection.addNote(&primaNota);
+    importantNotesCollection.addNote(&secondaNota);
 
-    //DA SISTEMARE QUESTO CONTROLLO SULLA CHIAMATA A NOTIFY OBSERVERS//-------
-
-    importantNotesCollection.notifyObservers();
+    /* Controllo se l'attributo notesCount della View è stato aggiornato grazie al metodo notifyObserver(), invocato a sua volta dal metodo addNote.
+     * Dunque verifico che esso sia uguale a 2 (visto che ho inserito due Note) */
+    ASSERT_EQ(2,importantNotesCollectionView.getNotesCount());
 }

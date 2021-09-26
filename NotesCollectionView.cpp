@@ -6,6 +6,7 @@
 
 
 void NotesCollectionView::update() {
+    notesCount = notesCollection->getListSize();
     std::cout<<"Numero di note nella lista "<<notesCollection->getName()<<": "<<notesCollection->getListSize()<<std::endl;
 }
 
@@ -15,4 +16,8 @@ NotesCollectionView::NotesCollectionView(NotesCollection *s) : notesCollection(s
 
 NotesCollectionView::~NotesCollectionView() {
     notesCollection->removeObserver(this);
+}
+
+int NotesCollectionView::getNotesCount() const {
+    return notesCount;
 }

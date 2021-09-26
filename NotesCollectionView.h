@@ -11,10 +11,12 @@
 class NotesCollectionView : public Observer{
 public:
     NotesCollection* notesCollection;
+    int notesCount;
 public:
     explicit NotesCollectionView(NotesCollection* s);
     void update() override;
     virtual ~NotesCollectionView();
+    int getNotesCount() const;
 };
 
 
