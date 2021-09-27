@@ -10,8 +10,6 @@
 #include <gmock/gmock.h>
 
 int main() {
-    ::testing::InitGoogleTest();
-    return RUN_ALL_TESTS();
     /*NotesCollection notesCollection("Appunti da finire");
     ImportantNotesCollection importantNotesCollection;
     SpecificNotesCollection specificNotesCollection;
@@ -43,6 +41,8 @@ int main() {
     notesCollection.removeNote(&primaNota);
     notesCollection.removeNote(&secondaNota);
     notesCollection.printAllNotes();
+    */
+    ::testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
 
-    return 0;*/
 }

@@ -21,3 +21,7 @@ NotesCollectionView::~NotesCollectionView() {
 int NotesCollectionView::getNotesCount() const {
     return notesCount;
 }
+
+NotesCollection *NotesCollectionView::getNotesCollection() const {
+    return notesCollection;
+}
