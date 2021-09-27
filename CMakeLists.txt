@@ -14,5 +14,5 @@ add_executable(LaboratorioDiProgrammazioneEs13 main.cpp ImportantNotesCollection
         NotesCollectionView.h Observer.h SpecificNotesCollection.h SpecificNotesCollectionView.h Subject.h Test/NoteTest.cpp
         Test/ImportantNotesCollectionTest.cpp
         Test/NotesCollectionTest.cpp Test/SpecificNotesCollectionTest.cpp Test/ImportantNotesCollectionViewTest.cpp
-        Test/NotesCollectionViewTest.cpp)
+        Test/NotesCollectionViewTest.cpp Test/SpecificNotesCollectionViewTest.cpp)
 target_link_libraries(LaboratorioDiProgrammazioneEs13 gtest gtest_main)

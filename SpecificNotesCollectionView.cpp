@@ -20,3 +20,7 @@ SpecificNotesCollectionView::~SpecificNotesCollectionView() {
 int SpecificNotesCollectionView::getNotesCount() const {
     return notesCount;
 }
+
+SpecificNotesCollection *SpecificNotesCollectionView::getSpecificNotesCollection() const {
+    return specificNotesCollection;
+}
