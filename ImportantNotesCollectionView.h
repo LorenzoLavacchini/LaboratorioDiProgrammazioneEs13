@@ -16,6 +16,9 @@ public:
     void update() override;
     virtual ~ImportantNotesCollectionView();
     int getNotesCount() const;
+
+    //Serve per praticità di Unit Testing
+    ImportantNotesCollection* getImportantNotesCollection() const;
 };
 
 

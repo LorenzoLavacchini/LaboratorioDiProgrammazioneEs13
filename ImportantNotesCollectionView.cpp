@@ -21,4 +21,8 @@ int ImportantNotesCollectionView::getNotesCount() const {
     return notesCount;
 }
 
+ImportantNotesCollection *ImportantNotesCollectionView::getImportantNotesCollection() const {
+    return importantNotesCollection;
+}
+
 
