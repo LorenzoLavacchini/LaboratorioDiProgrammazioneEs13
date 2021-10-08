@@ -13,7 +13,6 @@ public:
     int getListSize();
     virtual void addNote(Note* n);
     virtual void removeNote(Note* n);
-    void printAllNotes();
 };
 
 

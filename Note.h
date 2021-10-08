@@ -19,7 +19,6 @@ public:
     void setText(const std::string &text);
     bool isBlocked() const;
     void setBlocked(bool blocked);
-    void printInformations();
     bool operator==(const Note& n);
 };
 
