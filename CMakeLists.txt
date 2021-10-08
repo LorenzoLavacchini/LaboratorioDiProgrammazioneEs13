@@ -9,7 +9,7 @@ include_directories(Test/lib/googletest-master/googlemock/include)
 
 
 add_executable(LaboratorioDiProgrammazioneEs13 main.cpp ImportantNotesCollection.cpp ImportantNotesCollectionView.cpp Note.cpp
-        NotesCollection.cpp NotesCollectionView.cpp SpecificNotesCollection.cpp SpecificNotesCollectionView.cpp Subject.cpp Collection.cpp
+        NotesCollection.cpp NotesCollectionView.cpp SpecificNotesCollection.cpp SpecificNotesCollectionView.cpp Collection.cpp
         Collection.h ImportantNotesCollection.h ImportantNotesCollectionView.h Note.h NotesCollection.h
         NotesCollectionView.h Observer.h SpecificNotesCollection.h SpecificNotesCollectionView.h Subject.h Test/NoteTest.cpp
         Test/ImportantNotesCollectionTest.cpp
