@@ -9,29 +9,23 @@
 #include "Subject.h"
 #include "Collection.h"
 
-class NotesCollection : public Subject, public Collection{
+class NotesCollection : public Subject{
 private:
     std::string name;
     std::list<Observer*> observers;
+    std::list<Note*> notes;
 public:
     explicit NotesCollection(std::string n);
     const std::string &getName() const;
-
     void setName(const std::string &name);
-
     void addObserver(Observer *o) override;
-
     void removeObserver(Observer *o) override;
-
     void notifyObservers() override;
-
     virtual ~NotesCollection(){}
-
-    void addNote(Note *n) override;
-
-    void removeNote(Note *n) override;
-
+    void addNote(Note* n);
+    void removeNote(Note* n);
     int getNumObservers();
+    int getListSize();
 };
 
 

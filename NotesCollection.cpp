@@ -29,20 +29,29 @@ void NotesCollection::notifyObservers() {
     }
 }
 
-void NotesCollection::addNote(Note *n) {
-    Collection::addNote(n);
-    notifyObservers();
-}
-
-void NotesCollection::removeNote(Note *n) {
-    Collection::removeNote(n);
-    notifyObservers();
-}
-
 int NotesCollection::getNumObservers(){
     int i = 0;
     for(auto o:observers){
         i++;
     }
     return i;
+}
+
+
+int NotesCollection::getListSize() {
+    return notes.size();
+}
+
+void NotesCollection::addNote(Note *n) {
+    notes.push_back(n);
+}
+
+void NotesCollection::removeNote(Note *n) {
+    if(n->isBlocked()==false){
+        notes.remove(n);
+    }
+    else{
+        std::cout<<"Impossibile cancellare la nota. E' necessario sbloccarla"<<std::endl;
+    }
+    notifyObservers();
 }
