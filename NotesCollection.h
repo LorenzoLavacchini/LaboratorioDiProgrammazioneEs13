@@ -25,6 +25,8 @@ public:
     void removeNote(Note* n);
     int getNumObservers();
     int getListSize();
+    int getImportantListSize();
+    int getCertainTagListSize(std::string t);
 };
 
 

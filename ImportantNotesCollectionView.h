@@ -5,20 +5,17 @@
 #ifndef LABORATORIODIPROGRAMMAZIONEES13_IMPORTANTNOTESCOLLECTIONVIEW_H
 #define LABORATORIODIPROGRAMMAZIONEES13_IMPORTANTNOTESCOLLECTIONVIEW_H
 #include "Observer.h"
-#include "ImportantNotesCollection.h"
+#include "NotesCollection.h"
 
 class ImportantNotesCollectionView : public Observer{
 private:
-    ImportantNotesCollection* importantNotesCollection;
+    NotesCollection* notesCollection;
     int notesCount;
 public:
-    explicit ImportantNotesCollectionView(ImportantNotesCollection* s);
+    explicit ImportantNotesCollectionView(NotesCollection* s);
     void update() override;
     virtual ~ImportantNotesCollectionView();
     int getNotesCount() const;
-
-    //Serve per praticità di Unit Testing
-    ImportantNotesCollection* getImportantNotesCollection() const;
 };
 
 

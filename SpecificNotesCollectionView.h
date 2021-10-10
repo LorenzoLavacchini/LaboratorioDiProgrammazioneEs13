@@ -5,20 +5,18 @@
 #ifndef LABORATORIODIPROGRAMMAZIONEES13_SPECIFICNOTESCOLLECTIONVIEW_H
 #define LABORATORIODIPROGRAMMAZIONEES13_SPECIFICNOTESCOLLECTIONVIEW_H
 #include "Observer.h"
-#include "SpecificNotesCollection.h"
+#include "NotesCollection.h"
 
 class SpecificNotesCollectionView : public Observer{
 private:
-    SpecificNotesCollection* specificNotesCollection;
+    std::string tagToObserve;
+    NotesCollection* notesCollection;
     int notesCount;
 public:
-    explicit SpecificNotesCollectionView(SpecificNotesCollection* s);
+    SpecificNotesCollectionView(NotesCollection* s, std::string t);
     void update() override;
     virtual ~SpecificNotesCollectionView();
     int getNotesCount() const;
-
-    //Serve per praticità di Unit Testing
-    SpecificNotesCollection *getSpecificNotesCollection() const;
 };
 
 

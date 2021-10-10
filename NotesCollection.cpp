@@ -55,3 +55,23 @@ void NotesCollection::removeNote(Note *n) {
     }
     notifyObservers();
 }
+
+int NotesCollection::getImportantListSize() {
+    int count = 0;
+    for(auto n:notes){
+        if(n->isImportant()==true){
+            count++;
+        }
+    }
+    return count;
+}
+
+int NotesCollection::getCertainTagListSize(std::string t) {
+    int count = 0;
+    for(auto n:notes){
+        if(n->containsTag(t)==true){
+            count++;
+        }
+    }
+    return count;
+}

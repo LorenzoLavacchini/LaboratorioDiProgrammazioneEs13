@@ -5,22 +5,18 @@
 #include "SpecificNotesCollectionView.h"
 
 void SpecificNotesCollectionView::update() {
-    notesCount = specificNotesCollection->getListSize();
-    std::cout<<"Numero di note nella lista specificNotesCollection:"<<specificNotesCollection->getListSize()<<std::endl;
+    notesCount = notesCollection->getCertainTagListSize(tagToObserve);
 }
 
-SpecificNotesCollectionView::SpecificNotesCollectionView(SpecificNotesCollection *s):specificNotesCollection(s){
-    specificNotesCollection->addObserver(this);
+SpecificNotesCollectionView::SpecificNotesCollectionView(NotesCollection *s, std::string t):notesCollection(s), tagToObserve(t){
+    notesCollection->addObserver(this);
 }
 
 SpecificNotesCollectionView::~SpecificNotesCollectionView() {
-    specificNotesCollection->removeObserver(this);
+    notesCollection->removeObserver(this);
 }
 
 int SpecificNotesCollectionView::getNotesCount() const {
     return notesCount;
 }
 
-SpecificNotesCollection *SpecificNotesCollectionView::getSpecificNotesCollection() const {
-    return specificNotesCollection;
-}

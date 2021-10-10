@@ -5,24 +5,20 @@
 #include "ImportantNotesCollectionView.h"
 
 void ImportantNotesCollectionView::update() {
-    notesCount = importantNotesCollection->getListSize();
-    std::cout<<"Numero di note nella lista importantNotesCollection:"<<importantNotesCollection->getListSize()<<std::endl;
+    notesCount = notesCollection->getImportantListSize();
 }
 
-ImportantNotesCollectionView::ImportantNotesCollectionView(ImportantNotesCollection *s) : importantNotesCollection(s) {
-    importantNotesCollection->addObserver(this);
+ImportantNotesCollectionView::ImportantNotesCollectionView(NotesCollection *s) : notesCollection(s) {
+    notesCollection->addObserver(this);
 }
 
 ImportantNotesCollectionView::~ImportantNotesCollectionView() {
-    importantNotesCollection->removeObserver(this);
+    notesCollection->removeObserver(this);
 }
 
 int ImportantNotesCollectionView::getNotesCount() const {
     return notesCount;
 }
 
-ImportantNotesCollection *ImportantNotesCollectionView::getImportantNotesCollection() const {
-    return importantNotesCollection;
-}
 
 
