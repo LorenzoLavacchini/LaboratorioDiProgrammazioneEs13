@@ -12,9 +12,6 @@ void Note::setTitle(const std::string &title) {
     if(blocked == false) {
         Note::title = title;
     }
-    else{
-        std::cout<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
-    }
 }
 
 const std::string &Note::getText() const {
@@ -24,9 +21,6 @@ const std::string &Note::getText() const {
 void Note::setText(const std::string &text) {
     if(blocked == false) {
         Note::text = text;
-    }
-    else{
-        std::cout<<"Impossibile modificare la nota. E' necessario sbloccarla."<<std::endl;
     }
 }
 
@@ -40,16 +34,6 @@ void Note::setBlocked(bool blocked) {
 
 Note::Note(std::string ti, std::string te, bool b, bool i) : title(ti),text(te),blocked(b),important(i){}
 
-
-bool Note::operator==(const Note &n) {
-    if(title == n.getTitle() && text == n.getText() && blocked == n.isBlocked()){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 bool Note::isImportant() const {
     return important;
 }
@@ -59,7 +43,9 @@ void Note::setImportant(bool important) {
 }
 
 void Note::addTag(std::string t) {
-    tags.push_back(t);
+    if(blocked == false){
+        tags.push_back(t);
+    }
 }
 
 bool Note::containsTag(std::string t) {
@@ -70,5 +56,13 @@ bool Note::containsTag(std::string t) {
         }
     }
     return result;
+}
+
+int Note::getNumTags() {
+    int count = 0;
+    for(auto tag:tags){
+        count++;
+    }
+    return count;
 }
 

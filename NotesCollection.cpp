@@ -62,9 +62,6 @@ void NotesCollection::removeNote(Note *n) {
         if(n->isBlocked()==false){
             notes.remove(n);
         }
-        else{
-            std::cout<<"Impossibile cancellare la nota. E' necessario sbloccarla"<<std::endl;
-        }
         notifyObservers();
     }
     else{

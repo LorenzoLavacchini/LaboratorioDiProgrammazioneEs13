@@ -22,11 +22,11 @@ public:
     void setText(const std::string &text);
     bool isBlocked() const;
     void setBlocked(bool blocked);
-    bool operator==(const Note& n);
     bool isImportant() const;
     void setImportant(bool important);
     void addTag(std::string t);
     bool containsTag(std::string t);
+    int getNumTags();
 };
 
 
