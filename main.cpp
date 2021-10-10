@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Note.h"
 #include "NotesCollection.h"
-#include "ImportantNotesCollection.h"
-#include "SpecificNotesCollection.h"
 #include "NotesCollectionView.h"
 #include "ImportantNotesCollectionView.h"
 #include "SpecificNotesCollectionView.h"
