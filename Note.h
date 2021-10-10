@@ -5,14 +5,17 @@
 #ifndef LABORATORIODIPROGRAMMAZIONEES13_NOTE_H
 #define LABORATORIODIPROGRAMMAZIONEES13_NOTE_H
 #include <iostream>
+#include <list>
 
 class Note {
 private:
     std::string title;
     std::string text;
     bool blocked;
+    bool important;
+    std::list<std::string> tags;
 public:
-    Note(std::string ti, std::string te,bool b);
+    Note(std::string ti, std::string te,bool b, bool i=false);
     const std::string &getTitle() const;
     void setTitle(const std::string &title);
     const std::string &getText() const;
@@ -20,6 +23,10 @@ public:
     bool isBlocked() const;
     void setBlocked(bool blocked);
     bool operator==(const Note& n);
+    bool isImportant() const;
+    void setImportant(bool important);
+    void addTag(std::string t);
+    bool containsTag(std::string t);
 };
 
 
