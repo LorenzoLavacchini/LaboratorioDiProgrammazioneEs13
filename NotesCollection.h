@@ -7,7 +7,6 @@
 #include "Note.h"
 #include <list>
 #include "Subject.h"
-#include "Collection.h"
 
 class NotesCollection : public Subject{
 private:
