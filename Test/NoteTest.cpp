@@ -35,3 +35,28 @@ TEST(Note, containsTag){
     n.addTag("nuovo tag");
     ASSERT_TRUE(n.containsTag("nuovo tag"));
 }
+
+TEST(Note, removeTag){
+    bool exceptionRegistered = false;
+    Note n("title","text",false);
+    n.addTag("nuovo tag");
+
+    //Rimuovo  un tag che è presente: non mi aspetto eccezioni.
+    try {
+        n.removeTag("nuovo tag");
+    }
+    catch(std::runtime_error& e){
+        exceptionRegistered = true;
+    }
+    ASSERT_FALSE(exceptionRegistered);
+
+    //Rimuovo un tag che non è presente nella lista: mi asoetto un'eccezione.
+    try{
+        n.removeTag("tag inesistente");
+    }
+    catch(std::runtime_error& e){
+        exceptionRegistered = true;
+    }
+    ASSERT_TRUE(exceptionRegistered);
+
+}

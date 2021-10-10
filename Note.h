@@ -25,6 +25,7 @@ public:
     bool isImportant() const;
     void setImportant(bool important);
     void addTag(std::string t);
+    void removeTag(std::string t);
     bool containsTag(std::string t);
     int getNumTags();
 };

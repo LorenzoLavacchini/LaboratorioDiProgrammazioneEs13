@@ -66,3 +66,19 @@ int Note::getNumTags() {
     return count;
 }
 
+void Note::removeTag(std::string t) {
+    bool result = false;
+    for(auto tag:tags){
+        if(tag==t){
+            result = true;
+        }
+    }
+
+    if(result == true){
+        tags.remove(t);
+    }
+    else{
+        throw std::runtime_error("Nessun tag con questo nome trovato.");
+    }
+}
+
