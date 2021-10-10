@@ -44,6 +44,7 @@ int NotesCollection::getListSize() {
 
 void NotesCollection::addNote(Note *n) {
     notes.push_back(n);
+    notifyObservers();
 }
 
 void NotesCollection::removeNote(Note *n) {

@@ -17,6 +17,9 @@ public:
     void update() override;
     virtual ~SpecificNotesCollectionView();
     int getNotesCount() const;
+
+    //Serve per praticità di Unit Testing
+    NotesCollection *getNotesCollection() const;
 };
 
 
