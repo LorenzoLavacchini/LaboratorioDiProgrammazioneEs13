@@ -48,13 +48,29 @@ void NotesCollection::addNote(Note *n) {
 }
 
 void NotesCollection::removeNote(Note *n) {
-    if(n->isBlocked()==false){
-        notes.remove(n);
+    //Aggiunto il controllo sulla rimozione delle Note: se la nota da rimuovere
+    //non coincide con nessuna nota presente nella lista, allora viene lanciata un'eccezione
+
+    bool found = false;
+    for(auto note:notes){
+        if(n==note){
+            found = true;
+        }
+    }
+
+    if(found == true){
+        if(n->isBlocked()==false){
+            notes.remove(n);
+        }
+        else{
+            std::cout<<"Impossibile cancellare la nota. E' necessario sbloccarla"<<std::endl;
+        }
+        notifyObservers();
     }
     else{
-        std::cout<<"Impossibile cancellare la nota. E' necessario sbloccarla"<<std::endl;
+        throw std::runtime_error("Errore: si può cancellare solo note presenti all'interno della lista");
     }
-    notifyObservers();
+
 }
 
 int NotesCollection::getImportantListSize() {
