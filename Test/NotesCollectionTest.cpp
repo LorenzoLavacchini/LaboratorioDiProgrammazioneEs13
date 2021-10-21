@@ -32,32 +32,16 @@ TEST(NotesCollection, removeNote) {
     ASSERT_EQ(1, notesCollection.getListSize());
 }
 TEST(NotesCollection, removeNoteInvalid){
-    //Variabile booleana che indica se è stata lanciata un'eccezione o no
-    bool exceptionRegistered = false;
-
     NotesCollection notesCollection("titolo collezione");
     Note primaNota("prima nota", "appunti di informatica", false);
     Note secondaNota("seconda nota", "appunti di matematica", true);
     notesCollection.addNote(&primaNota);
 
     //Rimuovo una nota che è presente all'interno della lista: non mi aspetto nessuna eccezione
-    try {
-        notesCollection.removeNote(&primaNota);
-    }
-    catch(std::runtime_error& e){
-        exceptionRegistered = true;
-    }
-    ASSERT_FALSE(exceptionRegistered);
-
+    ASSERT_NO_THROW(notesCollection.removeNote(&primaNota));
 
     //Rimuovo una nota che non è presente all'interno della lista: mi aspetto che sia lanciata un'eccezione
-    try{
-        notesCollection.removeNote(&primaNota);
-    }
-    catch(std::runtime_error& e){
-        exceptionRegistered = true;
-    }
-    ASSERT_TRUE(exceptionRegistered);
+    ASSERT_THROW(notesCollection.removeNote(&primaNota),std::runtime_error);
 }
 TEST(NotesCollection, addObserver){
     NotesCollection notesCollection("titolo collezione");
